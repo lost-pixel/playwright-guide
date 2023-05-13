@@ -1,0 +1,14 @@
+{
+  "name": "todomvc-test",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "playwright test",
+    "ctest": "playwright test --project=chromium"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.27.0"
+  }
+}
