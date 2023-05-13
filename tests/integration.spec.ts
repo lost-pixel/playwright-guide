@@ -10,8 +10,8 @@ test.beforeEach(async ({ page }) => {
 });
 
 const TODO_ITEMS = [
-  "buy some cheese",
-  "feed the cat",
+  "buy some Cheddar cheese",
+  "feed the dog",
   "book a doctors appointment",
 ];
 
@@ -37,6 +37,8 @@ test.describe("New Todo", () => {
     ]);
 
     await checkNumberOfTodosInLocalStorage(page, 2);
+
+    await expect(page).toHaveScreenshot("new-todo.png");
   });
 
   test("should clear text input field when an item is added", async ({
@@ -105,6 +107,8 @@ test.describe("Mark all as completed", () => {
       "completed",
     ]);
     await checkNumberOfCompletedTodosInLocalStorage(page, 3);
+
+    await expect(page).toHaveScreenshot("completed-todo.png");
   });
 
   test("should allow me to clear the complete state of all items", async ({
@@ -393,6 +397,7 @@ test.describe("Routing", () => {
       TODO_ITEMS[0],
       TODO_ITEMS[2],
     ]);
+    await expect(page).toHaveScreenshot("active-items.png");
   });
 
   test("should respect the back button", async ({ page }) => {
