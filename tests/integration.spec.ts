@@ -39,6 +39,7 @@ test.describe("New Todo", () => {
     await checkNumberOfTodosInLocalStorage(page, 2);
 
     await expect(page).toHaveScreenshot("new-todo.png");
+    await page.screenshot({ path: "lost-pixel/new-todo.png", fullPage: true });
   });
 
   test("should clear text input field when an item is added", async ({
